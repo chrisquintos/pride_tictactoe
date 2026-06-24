@@ -46,12 +46,12 @@ function handlePlayerClick(e) {
     const square = e.target;
     if (square.textContent !== "") return;
 
-    square.textContent = "gay";
-    square.classList.add("gay");
+    square.textContent = "X";
+    square.classList.add("X");
     square.disabled = true;
 
-    if (checkWinner("gay")) {
-        infoDisplay.textContent = "You win gay boi!🏳️‍🌈";
+    if (checkWinner("X")) {
+        infoDisplay.textContent = "You win!";
         infoDisplay.style.color = "white";
         gameOver = true;
         disableBoard();
@@ -78,12 +78,12 @@ function makeComputerMove() {
     if (available.length === 0) return;
 
     const chosen = available[Math.floor(Math.random() * available.length)];
-    chosen.textContent = "str8";
-    chosen.classList.add("str8");
+    chosen.textContent = "O";
+    chosen.classList.add("O");
     chosen.disabled = true;
 
-    if (checkWinner("str8")) {
-        infoDisplay.textContent = "the Straights wins!";
+    if (checkWinner("O")) {
+        infoDisplay.textContent = "the robots win!";
         infoDisplay.style.color = "white";
         gameOver = true;
         disableBoard();
